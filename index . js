@@ -1,0 +1,21 @@
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.send(`
+    <html>
+      <head><title>Prosper Vox Radio</title></head>
+      <body style="background:#111;color:white;text-align:center;font-family:sans-serif;padding:40px">
+        <h1>🎙️ PROSPER VOX RADIO</h1>
+        <p>Your voice, your station.</p>
+        <audio controls style="width:90%">
+          <source src="https://stream.zeno.fm/0r0xa7mgy68uv" type="audio/mpeg">
+        </audio>
+        <p>Live Now</p>
+      </body>
+    </html>
+  `);
+});
+
+app.listen(PORT, () => console.log('Running on ' + PORT));
